@@ -9,6 +9,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
   const options = new DocumentBuilder()
+    .addBearerAuth()
     .setTitle('API CODERS A BORDO')
     .setDescription('API rest para CODERS A BORDO en mongodb')
     .setVersion('1.0')
