@@ -1,4 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Role } from 'src/model/role.enum';
 
 export class CreateUserDto {
   @ApiProperty({ example: 'Juana' })
@@ -15,4 +16,7 @@ export class CreateUserDto {
 
   @ApiProperty({ example: 'Barcelona' })
   readonly city: string;
+
+  @ApiProperty({ example: 'Admin' })
+  readonly role: Role[];
 }
