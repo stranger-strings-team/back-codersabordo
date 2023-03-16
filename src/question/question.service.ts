@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateQuestionDto } from './dto/create-question.dto';
@@ -11,7 +12,8 @@ import { EncryptService } from 'src/tools/encrypt.service';
 @Injectable()
 export class QuestionService {
   constructor(
-    @InjectModel(Question.name) private readonly questionModel: Model<QuestionDocument>,
+    @InjectModel(Question.name)
+    private readonly questionModel: Model<QuestionDocument>,
     private encryptService: EncryptService,
   ) {}
 

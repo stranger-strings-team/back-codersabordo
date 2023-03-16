@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { QuestionService } from './question.service';
 import { QuestionController } from './question.controller';
@@ -18,7 +19,7 @@ import { RolesGuard } from 'src/auth/roles.guard';
     ToolsModule,
   ],
   controllers: [QuestionController],
-  providers: [QuestionService, {provide: APP_GUARD, useClass: RolesGuard}],
+  providers: [QuestionService, { provide: APP_GUARD, useClass: RolesGuard }],
   exports: [QuestionService],
 })
 export class QuestionModule {}

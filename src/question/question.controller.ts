@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Req, UseGuards } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { QuestionService } from './question.service';
 import { CreateQuestionDto } from './dto/create-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
@@ -22,7 +33,7 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
-  @HasRoles(Role.Admin)
+  // @HasRoles(Role.Admin)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get()
   async findAll(@Req() request: Request) {
@@ -39,7 +50,10 @@ export class QuestionController {
   @HasRoles(Role.Admin)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateQuestionDto: UpdateQuestionDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateQuestionDto: UpdateQuestionDto,
+  ) {
     return this.questionService.update(id, updateQuestionDto);
   }
 
