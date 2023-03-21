@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
@@ -8,7 +9,7 @@ import { UserService } from 'src/user/user.service';
 import { AuthService } from './auth.service';
 import { jwtConstants } from './constants/constant';
 import { LoginController } from './login.controller';
-import { RolesGuard } from './roles.guard';
+
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
 
@@ -23,7 +24,7 @@ import { LocalStrategy } from './strategies/local.strategy';
     ToolsModule,
   ],
   controllers: [LoginController],
-  providers: [JwtStrategy, LocalStrategy, AuthService, {provide: APP_GUARD, useClass: RolesGuard}],
+  providers: [JwtStrategy, LocalStrategy, AuthService],
   exports: [AuthService],
 })
 export class AuthModule {}

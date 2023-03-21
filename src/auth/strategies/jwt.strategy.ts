@@ -1,11 +1,13 @@
+/* eslint-disable prettier/prettier */
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { jwtConstants } from '../constants/constant';
+import { UserService } from 'src/user/user.service';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor() {
+  constructor(private userService: UserService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: jwtConstants.secret,
@@ -14,10 +16,11 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any): Promise<any> {
-    console.log(payload)
-    if (!payload) {
+    const user = await this.userService.findOneByEmail(payload.email)
+    console.log(user)
+    if (!user) {
       throw new HttpException('Invalid token', HttpStatus.UNAUTHORIZED);
     }
-    return payload;
+    return user;
   }
 }

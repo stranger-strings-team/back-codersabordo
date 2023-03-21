@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -36,7 +37,7 @@ export class UserService {
   }
 
   async findOneByEmail(email: string): Promise<User> {
-    return this.userModel.findOne({ email });
+    return this.userModel.findOne({ email }).lean();
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {

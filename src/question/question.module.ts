@@ -5,8 +5,8 @@ import { QuestionController } from './question.controller';
 import { Question, QuestionSchema } from './schemas/question.schema';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ToolsModule } from 'src/tools/tools.module';
-import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from 'src/auth/roles.guard';
+
+
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { RolesGuard } from 'src/auth/roles.guard';
     ToolsModule,
   ],
   controllers: [QuestionController],
-  providers: [QuestionService, { provide: APP_GUARD, useClass: RolesGuard }],
+  providers: [QuestionService],
   exports: [QuestionService],
 })
 export class QuestionModule {}

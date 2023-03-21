@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
@@ -5,7 +6,7 @@ import { User, UserSchema } from './schemas/user.schema';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ToolsModule } from 'src/tools/tools.module';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from 'src/auth/roles.guard';
+
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { RolesGuard } from 'src/auth/roles.guard';
     ToolsModule,
   ],
   controllers: [UserController],
-  providers: [UserService, { provide: APP_GUARD, useClass: RolesGuard }],
+  providers: [UserService],
   exports: [UserService],
 })
 export class UserModule {}
