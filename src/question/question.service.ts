@@ -7,14 +7,14 @@ import { Question, QuestionDocument } from './schemas/question.schema';
 import { Model, ObjectId } from 'mongoose';
 import { Request } from 'express';
 // import { hash } from 'bcrypt';
-import { EncryptService } from 'src/tools/encrypt.service';
+// import { EncryptService } from '../tools/encrypt.service';
 
 @Injectable()
 export class QuestionService {
   constructor(
     @InjectModel(Question.name)
     private readonly questionModel: Model<QuestionDocument>,
-    private encryptService: EncryptService,
+    // private encryptService: EncryptService,
   ) {}
 
   async create(createQuestionDto: CreateQuestionDto): Promise<Question> {

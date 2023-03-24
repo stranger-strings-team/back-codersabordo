@@ -9,10 +9,12 @@ export class Question {
   question: string;
 
   @Prop({ required: true })
-  answer: [{
-    text: string,
-    isCorrect: boolean 
-  }];
+  answer?: [
+    {
+      text: string;
+      isCorrect: boolean;
+    },
+  ];
 
   @Prop({ required: true })
   type: string;
@@ -25,8 +27,6 @@ export class Question {
 
   @Prop({ required: true })
   feedbackIncorrect: string;
-
 }
 
 export const QuestionSchema = SchemaFactory.createForClass(Question);
-
