@@ -26,7 +26,10 @@ export class User {
   roles: Role[];
 
   @Prop({ required: true })
-  progres: boolean[];
+  progress: boolean[];
+
+  @Prop({ required: false })
+  openQuestion: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

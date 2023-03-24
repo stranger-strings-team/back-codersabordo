@@ -23,4 +23,7 @@ export class CreateUserDto {
 
   @ApiProperty({ example: [false, false, false] })
   readonly section: boolean[];
+
+  @ApiProperty({ example: 'Espero poder aprender mucho durante el bootcamp' })
+  readonly openQuestion: string;
 }
