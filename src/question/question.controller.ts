@@ -33,9 +33,9 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
-  @HasRoles(Role.Admin)
-  @UseGuards(RolesGuard)
-  @UseGuards(JwtAuthGuard)
+  // @HasRoles(Role.Admin)
+  // @UseGuards(RolesGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get()
   async findAll(@Req() request: Request) {
     return this.questionService.findAll(request);
