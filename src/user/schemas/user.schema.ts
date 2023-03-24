@@ -24,6 +24,9 @@ export class User {
 
   @Prop({ required: true })
   roles: Role[];
+
+  @Prop({ required: true })
+  progres: boolean[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
