@@ -19,7 +19,7 @@ export class CreateUserDto {
   readonly city: string;
 
   @ApiProperty({ example: 'Admin' })
-  readonly role: Role[];
+  readonly role?: Role[];
 
   @ApiProperty({ example: [false, false, false] })
   readonly section: boolean[];

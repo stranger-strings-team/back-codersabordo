@@ -34,7 +34,7 @@ const mockQuestionModel = {
         'Nos queremos ver las caras entre todas y fomentar la participación',
       feedbackIncorrect: 'Incorrecto - vuelve a intentarlo',
     }),
-  })), 
+  })),
 };
 
 describe('QuestionService', () => {
@@ -86,20 +86,20 @@ describe('QuestionService', () => {
     const id = '6412dac979170802752bbc97';
     expect(await service.update(id, updateQuestionDto)).toMatchObject({
       _id: new mongoose.Types.ObjectId(id),
-    })
-  });
- 
-  it('should delete a question', async() => {
-    const id = '6412dac979170802752bbc97';
-    expect(await service.remove(id)).toMatchObject({
-      _id: new mongoose.Types.ObjectId(id)
-    })
+    });
   });
 
-  it('should find a question', async() => {
+  it('should delete a question', async () => {
+    const id = '6412dac979170802752bbc97';
+    expect(await service.remove(id)).toMatchObject({
+      _id: new mongoose.Types.ObjectId(id),
+    });
+  });
+
+  it('should find a question', async () => {
     const badgeId = '6412dac979170802752bbc97';
     expect(await service.findOne(badgeId)).toMatchObject({
-      _id: new mongoose.Types.ObjectId(badgeId)
-    })
-  })
+      _id: new mongoose.Types.ObjectId(badgeId),
+    });
+  });
 });

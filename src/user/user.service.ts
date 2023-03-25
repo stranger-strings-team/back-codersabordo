@@ -7,7 +7,7 @@ import { User, UserDocument } from './schemas/user.schema';
 import { Model, ObjectId } from 'mongoose';
 import { Request } from 'express';
 // import { hash } from 'bcrypt';
-import { EncryptService } from 'src/tools/encrypt.service';
+import { EncryptService } from '../tools/encrypt.service';
 
 @Injectable()
 export class UserService {
