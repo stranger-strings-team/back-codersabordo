@@ -1,24 +1,32 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+import { Test } from '@nestjs/testing';
+import { QuestionModule } from '../src/question/question.module'
+import { QuestionService } from '../src/question/question.service';
+import { INestApplication } from '@nestjs/common';
 
-describe('AppController (e2e)', () => {
+describe('Question', () => {
   let app: INestApplication;
+  const questionService = { findAll: () => ['test'] };
 
-  beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
-      imports: [AppModule],
-    }).compile();
+  beforeAll(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [QuestionModule],
+    })
+      .overrideProvider(QuestionService)
+      .useValue(questionService)
+      .compile();
 
-    app = moduleFixture.createNestApplication();
+    app = moduleRef.createNestApplication();
     await app.init();
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect('Hello World!');
+  it(`/GET question`, () => {
+    return request(app.getHttpServer()).get('/question').expect(200).expect({
+      data: questionService.findAll(),
+    }); 
   });
+
+  afterAll(async () => {
+    await app.close();
+  });  
 });

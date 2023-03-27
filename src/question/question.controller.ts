@@ -14,11 +14,11 @@ import { QuestionService } from './question.service';
 import { CreateQuestionDto } from './dto/create-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { Request } from 'express';
-import { HasRoles } from 'src/auth/has-roles.decorator';
-import { Role } from 'src/model/role.enum';
-import { RolesGuard } from 'src/auth/roles.guard';
+import { HasRoles } from '../auth/has-roles.decorator';
+import { Role } from '../model/role.enum';
+import { RolesGuard } from '../auth/roles.guard';
 
 @ApiBearerAuth()
 @Controller('question')
