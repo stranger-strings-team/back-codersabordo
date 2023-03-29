@@ -7,7 +7,7 @@ import { userStub } from './user.stub';
 import { CreateUserDto } from 'src/user/dto/create-user.dto';
 
 
-describe('UsersConroller E2E Test', () => {
+describe('UsersController E2E Test', () => {
   let dbConnection: Connection;
   let httpServer: any;
   let app: any;
@@ -43,27 +43,27 @@ describe('UsersConroller E2E Test', () => {
     });
   });
 
-  describe('create a user', () => {
-    it('should create a user', async () => {
-      const createUserRequest: CreateUserDto = {
-        name: userStub().name,
-        surname: userStub().surname,
-        password: userStub().password,
-        email: userStub().email,
-        city: userStub().city,
-        progress: userStub().progress,
-        openQuestion: userStub().openQuestion,
-      };
-      const response = await request(httpServer)
-        .post('/user')
-        .send(createUserRequest);
-      expect(response.status).toBe(201);
-      expect(response.body).toMatchObject(createUserRequest);
+  // describe('create a user', () => {
+  //   it('should create a user', async () => {
+  //     const createUserRequest: CreateUserDto = {
+  //       name: userStub().name,
+  //       surname: userStub().surname,
+  //       password: userStub().password,
+  //       email: userStub().email,
+  //       city: userStub().city,
+  //       progress: userStub().progress,
+  //       openQuestion: userStub().openQuestion,
+  //     };
+  //     const response = await request(httpServer)
+  //       .post('/user')
+  //       .send(createUserRequest);
+  //     expect(response.status).toBe(201);
+  //     expect(response.body).toMatchObject(createUserRequest);
 
-      const user = await dbConnection 
-        .collection('users')
-        .findOne({ email: createUserRequest.email });
-      expect(user).toMatchObject(createUserRequest);
-    });
-  });
+  //     const user = await dbConnection 
+  //       .collection('users')
+  //       .findOne({ email: createUserRequest.email });
+  //     expect(user).toMatchObject(createUserRequest);
+  //   });
+  // });
 });

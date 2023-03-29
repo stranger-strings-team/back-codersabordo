@@ -1,13 +1,15 @@
-import { User } from '../src/user/schemas/user.schema';
+import { CreateQuestionDto } from 'src/question/dto/create-question.dto';
 
-export const userStub = (): User => {
+export const questionStub = (): CreateQuestionDto => {
   return {
-    name: 'Juana',
-    surname: 'Cupcake',
-    password: '1234',
-    email: 'juanacupcake@gmail.com',
-    city: 'Barcelona',
-    progress: [false, false, false],
-    openQuestion: 'Espero aprender mucho',
+    question: '¿Cómo hay que conectarse a la clase?',
+    answer: [
+      { text: 'Con la cámara encendida y el micro apagado', isCorrect: true },
+    ],
+    type: 'Opción múltiple',
+    section: 'Sección normas',
+    feedbackCorrect:
+      'Nos queremos ver las caras entre todas y fomentar la participación',
+    feedbackIncorrect: 'Incorrecto - vuelve a intentarlo'
   };
 };

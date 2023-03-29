@@ -1,6 +1,7 @@
+import { CreateUserDto } from 'src/user/dto/create-user.dto';
 import { User } from '../src/user/schemas/user.schema';
 
-export const userStub = (): User => {
+export const userStub = (): CreateUserDto => {
   return {
     name: 'Juana',
     surname: 'Cupcake',
