@@ -30,7 +30,7 @@ const mockUserModel = {
       email: 'juanacupcake@gmail.com',
       city: 'Barcelona',
       // role: 'Admin', 
-      section: [true, false, false],
+      progress: [true, false, false],
       openQuestion: 'Espero poder aprender mucho durante el bootcamp',
     }),
   })),
@@ -66,7 +66,7 @@ describe('UserService', () => {
       email: 'juanacupcake@gmail.com',
       city: 'Barcelona',
       // role: 'Admin', 
-      section: [true, false, false],
+      progress: [true, false, false],
       openQuestion: 'Espero poder aprender mucho durante el bootcamp',
     };
 
@@ -84,7 +84,7 @@ describe('UserService', () => {
       email: 'juanacupcake@gmail.com',
       city: 'Barcelona',
       //role: ['Admin'], 
-      section: [true, false, false],
+      progress: [true, false, false],
       openQuestion: 'Espero poder aprender mucho durante el bootcamp',
     };
     const id = '6412dac979170802752bbc97';
