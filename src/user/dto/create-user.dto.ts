@@ -22,7 +22,7 @@ export class CreateUserDto {
   readonly role?: Role[];
 
   @ApiProperty({ example: [false, false, false] })
-  readonly section: boolean[];
+  readonly progress: boolean[];
 
   @ApiProperty({ example: 'Espero poder aprender mucho durante el bootcamp' })
   readonly openQuestion: string;
