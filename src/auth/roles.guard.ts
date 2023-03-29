@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { IUser } from 'src/user/interfaces/user.interface';
 import { Role } from '../model/role.enum';
 import { ROLES_KEY } from './has-roles.decorator';
 

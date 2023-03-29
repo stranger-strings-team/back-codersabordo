@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Role } from 'src/model/role.enum';
+import { Role } from '../../model/role.enum';
 
 export type UserDocument = User & Document;
 
@@ -13,8 +13,8 @@ export class User {
   @Prop({ required: true })
   surname: string;
 
-  @Prop({ required: true })
-  password: string;
+  @Prop()
+  password?: string;
 
   @Prop({ required: true, unique: true, match: /.+\@.+\..+/ })
   email: string;
@@ -22,8 +22,8 @@ export class User {
   @Prop({ required: true })
   city: string;
 
-  @Prop({ required: true })
-  roles: Role[];
+  @Prop()
+  roles?: Role[];
 
   @Prop({ required: true })
   progress: boolean[];

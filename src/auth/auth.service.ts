@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { User } from 'src/user/schemas/user.schema';
-import { UserService } from 'src/user/user.service';
+import { Injectable } from '@nestjs/common';
+import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
-import { compare } from 'bcrypt';
-import { EncryptService } from 'src/tools/encrypt.service';
-import { IUser } from 'src/user/interfaces/user.interface';
+import { EncryptService } from '../tools/encrypt.service';
+import { IUser } from '../user/interfaces/user.interface';
+
 @Injectable()
 export class AuthService {
   constructor(
