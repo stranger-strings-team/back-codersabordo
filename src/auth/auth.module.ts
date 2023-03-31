@@ -16,7 +16,7 @@ import { LocalStrategy } from './strategies/local.strategy';
   imports: [
     PassportModule,
     JwtModule.register({
-      secret: jwtConstants.secret,
+      secret: process.env.MONGO_DB,
       signOptions: { expiresIn: '24h' },
     }),
     UserModule,

@@ -17,7 +17,7 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { Request } from 'express';
 import { HasRoles } from '../auth/has-roles.decorator';
-import { Role } from '../model/role.enum';
+import { Role } from '../auth/model/role.enum';
 import { RolesGuard } from '../auth/roles.guard';
 
 @ApiBearerAuth()
@@ -33,9 +33,7 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
-  // @HasRoles(Role.Admin)
-  // @UseGuards(RolesGuard)
-  // @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard)
   @Get()
   async findAll(@Req() request: Request) {
     return this.questionService.findAll(request);

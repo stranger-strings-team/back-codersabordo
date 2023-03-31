@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Role } from '../../model/role.enum';
+import { Role } from '../../auth/model/role.enum';
 
 export type UserDocument = User & Document;
 

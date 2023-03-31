@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger';
-import { Role } from '../../model/role.enum';
+import { Role } from '../../auth/model/role.enum';
 
 export class CreateUserDto {
   @ApiProperty({ example: 'Juana' })

@@ -2,9 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service'
 import mongoose from 'mongoose';
 import { getModelToken } from '@nestjs/mongoose';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './schemas/user.schema';
 import { EncryptService } from '../tools/encrypt.service';
 
 const mockUserModel = {
@@ -28,8 +26,7 @@ const mockUserModel = {
       surname: 'Cupcake',
       password: '123456',
       email: 'juanacupcake@gmail.com',
-      city: 'Barcelona',
-      // role: 'Admin', 
+      city: 'Barcelona', 
       progress: [true, false, false],
       openQuestion: 'Espero poder aprender mucho durante el bootcamp',
     }),
