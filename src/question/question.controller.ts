@@ -18,7 +18,7 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { Request } from 'express';
 import { HasRoles } from '../auth/has-roles.decorator';
 import { Role } from '../auth/model/role.enum';
-import { RolesGuard } from '../auth/roles.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
 
 @ApiBearerAuth()
 @Controller('question')
@@ -33,7 +33,7 @@ export class QuestionController {
     return this.questionService.create(createQuestionDto);
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get()
   async findAll(@Req() request: Request) {
     return this.questionService.findAll(request);

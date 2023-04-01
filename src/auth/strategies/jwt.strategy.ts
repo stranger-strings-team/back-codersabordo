@@ -2,9 +2,7 @@
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-// import { jwtConstants } from '../constants/constant';
 import { UserService } from '../../user/user.service';
-import { ConfigService } from '@nestjs/config';
 import * as dotenv from 'dotenv';
 
 dotenv.config();

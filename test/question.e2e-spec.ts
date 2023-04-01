@@ -37,9 +37,9 @@ describe('QuestionController E2E Test', () => {
     it('should return an array of questions', async () => {
       await dbConnection.collection('questions').insertOne(questionStub());
       const response = await request(httpServer).get('/question');
-
+      console.log(response)
       expect(response.status).toBe(200);
-      expect(response.body).toMatchObject([questionStub()]);
+      expect(response.body).toMatchObject([questionStub()]); 
     });
   });
 

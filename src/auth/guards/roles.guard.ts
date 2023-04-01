@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { ROLES_KEY } from './has-roles.decorator';
-import { Role } from './model/role.enum';
+import { ROLES_KEY } from '../has-roles.decorator';
+import { Role } from '../model/role.enum';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
