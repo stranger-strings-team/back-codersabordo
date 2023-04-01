@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger';
-import { Role } from 'src/model/role.enum';
+import { Role } from '../../auth/model/role.enum';
 
 export class CreateUserDto {
   @ApiProperty({ example: 'Juana' })
@@ -10,7 +10,7 @@ export class CreateUserDto {
   readonly surname: string;
 
   @ApiProperty({ example: '1234' })
-  password: string;
+  password?: string;
 
   @ApiProperty({ example: 'juanacupcake@gmail.com' })
   readonly email: string;

@@ -9,12 +9,13 @@ import { QuestionModule } from './question/question.module';
 import * as dotenv from 'dotenv';
 import { APP_GUARD } from '@nestjs/core';
 import { QuestionService } from './question/question.service';
+import { DatabaseModule } from './database/database.module';
+import { ConfigModule } from '@nestjs/config/dist';
 
 dotenv.config();
 
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.MONGO_DB),
     // MongooseModule.forRootAsync({
     //   imports: [QuestionModule],
     //   useFactory: async (questionService: QuestionService) => ({
@@ -26,9 +27,11 @@ dotenv.config();
     //   }),
     //   inject: [QuestionService],
     // }),
+    ConfigModule.forRoot({isGlobal:true}),
     UserModule, 
     AuthModule,
     QuestionModule,
+    DatabaseModule
   ],
   controllers: [AppController],
   providers: [AppService],
