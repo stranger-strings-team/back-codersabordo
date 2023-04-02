@@ -1,7 +1,7 @@
 # Coders a bordo - Factoría F5
  
 <p align="center">
-<img src="https://raw.githubusercontent.com/stranger-strings-team/front-codersabordo/main/src/assets/logo.png" width="256px"> 
+<img src="src/assets/logo.png" width="256px"> 
 
 ***
 ## Table of Contents
@@ -18,6 +18,7 @@
   - [Versions](#versions)
   - [Deployment](#deployment)
   - [Authors](#authors)
+  - [FAQs](#faqs)
   - [About the project](#about-the-project)
   - [Tools](#tools)
   - [Methodology](#methodology)
@@ -29,28 +30,40 @@
 
 ## Screenshots
 
-<tab>
+<table>
+
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/1.png"></td>
+<td><img src="src/assets/screenshots/2.png"></td>
+<td><img src="src/assets/screenshots/3.png"></td>
+<td><img src="src/assets/screenshots/4.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/5.png"></td>
+<td><img src="src/assets/screenshots/6.png"></td>
+<td><img src="src/assets/screenshots/7.png"></td>
+<td><img src="src/assets/screenshots/8.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/9.png"></td>
+<td><img src="src/assets/screenshots/10.png"></td>
+<td><img src="src/assets/screenshots/11.png"></td>
+<td><img src="src/assets/screenshots/12.png"></td>
 </tr>
 <tr>
-<td><img src=""></td>
-<td><img src=""></td>
+<td><img src="src/assets/screenshots/13.png"></td>
+<td><img src="src/assets/screenshots/14.png"></td>
+<td><img src="src/assets/screenshots/15.png"></td>
+<td><img src="src/assets/screenshots/16.png"></td>
+</tr>
+<tr>
+<td><img src="src/assets/screenshots/17.png"></td>
+<td><img src="src/assets/screenshots/18.png"></td>
+<td><img src="src/assets/screenshots/19.png"></td>
+
+</tr>
+</table>
+
 
 ***
 
@@ -139,7 +152,7 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 
 4- Run `npm install` to install all the necessary dependencies.
 
-5- To run the development server, use the command `npm run dev`. This will start a local development server on http://localhost:3000/.
+5- To run the development server, use the command `npm run dev`. This will start a local development server on http://localhost:5173/.
 
 6- To build the project for production, use the command `npm run build`. This will create a **dist** directory with the compiled code.
 
@@ -159,8 +172,9 @@ To install and run the frontend of Coders a bordo, please follow the steps below
 ## Deployment
 
   
-[Visit our link](https://front-codersabordo-production.up.railway.app/)
-
+[Visit our link front](https://codersabordo.netlify.app/)
+<br>
+[Visit our link back](https://back-codersabordo-production.up.railway.app/)
 
 ***
 
