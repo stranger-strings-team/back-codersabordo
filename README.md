@@ -1,7 +1,7 @@
 # Coders a bordo - Factoría F5
  
 <p align="center">
-<img src="src/assets/logo.png" width="256px"> 
+<img src="https://raw.githubusercontent.com/stranger-strings-team/front-codersabordo/main/src/assets/logo.png" width="256px"> 
 
 ***
 ## Table of Contents
@@ -16,10 +16,8 @@
     - [Backend Installation](#backend-installation)
     - [Frontend Installation](#frontend-installation)
   - [Versions](#versions)
-    - [Plugins](#plugins)
   - [Deployment](#deployment)
   - [Authors](#authors)
-  - [FAQs](#faqs)
   - [About the project](#about-the-project)
   - [Tools](#tools)
   - [Methodology](#methodology)
