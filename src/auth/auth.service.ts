@@ -15,16 +15,13 @@ export class AuthService {
 
   async validateUser(email: string, password: string): Promise<IUser> {
     const user = await this.userService.findOneByEmail(email);
-    //console.log(user)
     if (user) {
       const isValidPassword = await this.encryptService.compare(
         password,
         user.password,
       );
-        //console.log(isValidPassword)
       if (isValidPassword) {
         const { password, ...result } = user;
-        //console.log('result', result)
         return result as IUser;
       }
     }
@@ -33,7 +30,6 @@ export class AuthService {
 
   async login(user: any) {
     const payload = { email: user.email, sub: user._id, roles: user.roles[0] };
-    //console.log(payload)
     return {
       access_token: this.jwtService.sign(payload),
     };
